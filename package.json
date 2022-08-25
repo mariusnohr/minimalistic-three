@@ -2,7 +2,6 @@
   "name": "minimalistic-three-starter",
   "version": "1.0.0",
   "description": "A minimalistc starter pack for threejs",
-  "main": "index.js",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html",
