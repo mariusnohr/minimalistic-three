@@ -6,6 +6,7 @@ This is my own starter template for working with small to medium sized WebGL-pro
 
 - Simple asset loading and management (textures, glb/gltf)
 - Pointer-events for mouse/touch handling
+- Subscribe to the render loop from within anywhere in your code
 - [glslify](https://github.com/glslify/glslify) for convenient component based shader modules
 - [Parcel](https://github.com/parcel-bundler/parcel) as the build system
 - [Orbitcontrols](https://threejs.org/docs/?q=orbi#examples/en/controls/OrbitControls) for easy camera movement
