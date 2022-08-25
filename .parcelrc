@@ -1,0 +1,26 @@
+{
+  "extends": "@parcel/config-default",
+  "reporters": [
+    "...",
+    "parcel-reporter-static-files-copy"
+  ],
+  "transformers": {
+    "*.mp4": [
+      "@parcel/transformer-raw"
+    ],
+    "*.fs": [
+      "...",
+      "@parcel/transformer-glsl"
+    ],
+    "*.vs": [
+      "...",
+      "@parcel/transformer-glsl"
+    ],
+    "*.gltf": [
+      "@parcel/transformer-raw"
+    ],
+    "*.glb": [
+      "@parcel/transformer-raw"
+    ]
+  }
+}

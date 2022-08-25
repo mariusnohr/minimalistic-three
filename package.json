@@ -1,0 +1,27 @@
+{
+  "name": "minimalistic-three-starter",
+  "version": "1.0.0",
+  "description": "A minimalistc starter pack for threejs",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html",
+    "clean": "rm -rf ./.parcel-cache && rm -rf ./dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "staticFiles": {
+    "staticPath": "static"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stats.js": "^0.17.0",
+    "three": "^0.143.0",
+    "tweakpane": "^3.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.7.0",
+    "parcel": "^2.7.0",
+    "parcel-reporter-static-files-copy": "^1.4.0"
+  }
+}
