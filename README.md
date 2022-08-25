@@ -10,7 +10,7 @@ This is my own starter template for working with small to medium sized WebGL-pro
 - [Parcel](https://github.com/parcel-bundler/parcel) as the build system
 - [Orbitcontrols](https://threejs.org/docs/?q=orbi#examples/en/controls/OrbitControls) for easy camera movement
 - FPS meter using [stats.js](https://github.com/mrdoob/stats.js/)
-- [Tweakpane](https://cocopon.github.io/tweakpane/) from an easy to use interface to tweak object values real time
+- [Tweakpane](https://cocopon.github.io/tweakpane/) for an easy to use interface to tweak object values real time
 
 ## Requirements
 
