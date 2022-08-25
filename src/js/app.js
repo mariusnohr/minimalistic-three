@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import { Vector3 } from 'three';
 
 import camera from './camera';
 import renderer from './renderer';
@@ -59,7 +59,7 @@ function setup() {
   // position cameara
   camera.position.z = 5;
   camera.position.y = 2;
-  camera.lookAt(new THREE.Vector3(0, 0, 0));
+  camera.lookAt(new Vector3(0, 0, 0));
 }
 
 setup();

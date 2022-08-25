@@ -1,11 +1,11 @@
 import { WebGLRenderer, sRGBEncoding } from 'three';
 
 import settings from './settings';
-const { dpr } = settings;
+const { dpr, antialias } = settings;
 
 const renderer = new WebGLRenderer({
   powerPreference: 'high-performance',
-  antialias: true,
+  antialias,
 });
 
 renderer.setSize(window.innerWidth, window.innerHeight);
