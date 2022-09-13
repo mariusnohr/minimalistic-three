@@ -141,7 +141,7 @@ class AssetLoader {
   }
 
   loadCubeTexture(item, done) {
-    const envMap = cubeTextureLoader.load(
+    cubeTextureLoader.load(
       item.urls,
       (cubeTexture) => {
         done(null, item, cubeTexture);

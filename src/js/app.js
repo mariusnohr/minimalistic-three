@@ -27,6 +27,8 @@ function init(model) {
     model.rotation.x += 0.5 * delta;
     model.rotation.y += 0.4 * delta;
     model.rotation.z += 0.3 * delta;
+
+    renderer.render(scene, camera);
   });
 
   // start rendering

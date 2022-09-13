@@ -1,9 +1,6 @@
 import { Clock } from 'three';
 import Stats from 'stats.js';
-
-import camera from './camera';
-import renderer from './renderer';
-import scene from './scene';
+import pointer from './pointer';
 import settings from './settings';
 
 let isPaused = true;
@@ -27,13 +24,13 @@ function tick() {
 
     if (stats) stats.begin();
 
+    pointer.update();
+
     listeners.forEach((func) => {
       func({ delta, elapsed });
     });
 
     if (stats) stats.end();
-
-    renderer.render(scene, camera);
   }
 }
 
