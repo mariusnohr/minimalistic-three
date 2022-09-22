@@ -48,4 +48,4 @@ This will build the whole project to the `dist` folder.
 
 ## Note about postprocessing
 
-There are currently no default postprocessing pipeline included for this project. I've seen some starter templates that include this, but my reasoning for this is firstly that I want to keep it simple, and secondly that these pipelines tend to be very specific for each project. There are also a lot of different options to choose from, so I don't want this to be any opinionated on this matter.
+There is currently no default postprocessing pipeline included for this project. I've seen some starter templates that include this, but my reasoning for this is firstly that I want to keep it simple, and secondly that these pipelines tend to be very specific for each project. There are also a lot of different options to choose from, so I don't want this to be any opinionated on this matter.
