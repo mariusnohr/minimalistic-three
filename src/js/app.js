@@ -6,6 +6,7 @@ import scene from './scene';
 import * as renderLoop from './renderloop';
 import assetloader from './assetloader';
 import gui from './gui';
+import pointer from './pointer';
 
 import './lights';
 import './resize';
@@ -24,9 +25,8 @@ function init(model) {
 
   // add a renderloop callback that runs every frame
   renderLoop.add(({ delta, elapsed }) => {
-    model.rotation.x += 0.5 * delta;
-    model.rotation.y += 0.4 * delta;
-    model.rotation.z += 0.3 * delta;
+    model.rotation.x = -1.5 * pointer.pointerNormalizedEased.y;
+    model.rotation.y = 1.5 * pointer.pointerNormalizedEased.x;
 
     renderer.render(scene, camera);
   });

@@ -4,12 +4,12 @@ class Pointer {
   pointerDown = false;
   enabled = true;
 
-  mouse = { x: 0, y: 0 };
-  mouseNormalized = { x: 0, y: 0 };
-  mouseEased = { x: 0, y: 0 };
-  mouseNormalizedEased = { x: 0, y: 0 };
+  pointer = { x: 0, y: 0 };
+  pointerNormalized = { x: 0, y: 0 };
+  pointerEased = { x: 0, y: 0 };
+  pointerNormalizedEased = { x: 0, y: 0 };
 
-  mouseDamping = 20;
+  pointerDamping = 20;
   listeners = {};
 
   constructor() {
@@ -23,9 +23,9 @@ class Pointer {
   toggleListeners(enabled) {
     const func = enabled ? 'addEventListener' : 'removeEventListener';
 
-    window[func](pointerEvents.prefix('pointerdown'), this.onPointerDown);
-    window[func](pointerEvents.prefix('pointerup'), this.onPointerUp);
-    window[func](pointerEvents.prefix('pointermove'), this.onPointerMove);
+    window[func](detectPointerEvents.prefix('pointerdown'), this.onPointerDown);
+    window[func](detectPointerEvents.prefix('pointerup'), this.onPointerUp);
+    window[func](detectPointerEvents.prefix('pointermove'), this.onPointerMove);
 
     this.enabled = enabled;
   }
@@ -43,22 +43,24 @@ class Pointer {
   onPointerMove = (evt) => {
     const { clientX, clientY } = evt;
 
-    this.mouse = { x: clientX, y: clientY };
-    this.mouseNormalized = screenToNDC(this.mouse);
+    this.pointer = { x: clientX, y: clientY };
+    this.pointerNormalized = screenToNDC(this.pointer);
 
     this.trigger('move');
   };
 
   update() {
-    this.mouseEased.x += (this.mouse.x - this.mouseEased.x) / this.mouseDamping;
-    this.mouseEased.y += (this.mouse.y - this.mouseEased.y) / this.mouseDamping;
+    this.pointerEased.x +=
+      (this.pointer.x - this.pointerEased.x) / this.pointerDamping;
+    this.pointerEased.y +=
+      (this.pointer.y - this.pointerEased.y) / this.pointerDamping;
 
-    this.mouseNormalizedEased.x +=
-      (this.mouseNormalized.x - this.mouseNormalizedEased.x) /
-      this.mouseDamping;
-    this.mouseNormalizedEased.y +=
-      (this.mouseNormalized.y - this.mouseNormalizedEased.y) /
-      this.mouseDamping;
+    this.pointerNormalizedEased.x +=
+      (this.pointerNormalized.x - this.pointerNormalizedEased.x) /
+      this.pointerDamping;
+    this.pointerNormalizedEased.y +=
+      (this.pointerNormalized.y - this.pointerNormalizedEased.y) /
+      this.pointerDamping;
   }
 
   enable() {
