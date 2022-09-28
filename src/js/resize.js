@@ -17,13 +17,13 @@ function onResize() {
   });
 }
 
-export function addResizeListener(fn) {
+export function listen(fn) {
   if (typeof fn === 'function') {
     listeners.push(fn);
   }
 }
 
-export function removeResizeLister(fn) {
+export function unlisten(fn) {
   listeners = listeners.filter((item) => item !== fn);
 }
 
